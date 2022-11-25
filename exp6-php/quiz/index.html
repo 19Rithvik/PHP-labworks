@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <style>
+        label{
+            display: block;
+            padding: 4px;
+        }
+    </style>
+    <h1>Quiz</h1>
+    <form action="evaluate.php" method="POST">
+        <label for="question1">National team of Cristiano Ronaldo?</label>
+        <input type="radio" name="question1" id="question1" value="argentina" required>Argentina
+        <input type="radio" name="question1" id="question1" value="brazil" required>Brazil
+        <input type="radio" name="question1" id="question1" value="portugal" required>Portugal
+        <input type="radio" name="question1" id="question1" value="spain" required>Spain
+        <br>
+        <label for="question2">State game of Tamil Nadu?</label>
+        <input type="radio" name="question2" id="question2" value="kabaddi" required>Kabaddi
+        <input type="radio" name="question2" id="question2" value="cricket" required>Cricket
+        <input type="radio" name="question2" id="question2" value="swimming" required>Swimming
+        <input type="radio" name="question2" id="question2" value="handball" required>Handball
+        <br>
+        <label for="question3">What is the national game of India?</label>
+        <select name="question3" id="question3" required>
+            <option value="">Select an Option</option>
+            <option value="hockey">Hockey</option>
+            <option value="football">Football</option>
+            <option value="cricket">Cricket</option>
+            <option value="kabaddi">Kabaddi</option>
+        </select>
+        <br>
+        <label for="question4">Is Virat is captian of India</label>
+        <input type="radio" name="question4" id="question4" value="yes" required>Yes
+        <input type="radio" name="question4" id="question4" value="no" required>No
+        <br>
+        <label for="question5">Is Chetri the all time 3rd top international goal scorer?</label>
+        <input type="radio" name="question5" id="question5" value="yes" required>Yes
+        <input type="radio" name="question5" id="question5" value="no" required>No
+        <br>
+        <label for="question6">Other names of India</label>
+        <input type="checkbox" name="question6[]" value="nemi" id="question6" checked>Nemi
+        <input type="checkbox" name="question6[]" value="bharath" id="question6">Bharath
+        <input type="checkbox" name="question6[]" value="hindusthan" id="question6">Hindusthan
+        <input type="checkbox" name="question6[]" value="burma" id="question6">Burma
+        <br>
+        <input type="submit" value="Submit" name="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+            <form id="registerForm">    
+                   <input type="text" id="username" name="username" placeholder="Enter Name">
+                   <br>
+                   <br>
+                   <input type="password" id="password" name="password" placeholder="Enter Password">
+                   <br>
+                   <br>
+                   <button id="btn">REGISTER</button>
+                   <!-- <input id="btn" type="submit" value="SUBMIT"  /> -->
+            </form>
+    </div>
+     
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    var form=$("#registerForm").on('submit',(e)=>{
+        e.preventDefault();
+        // CODES 
+        var name=$('#username').val();
+        var pass=$('#password').val();
+        $.ajax({
+            method:'POST',
+            url:'index.php',
+            data:{
+                username:name,
+                password:pass
+            },
+            success:function(e)
+            {
+                console.log("Data stored in DATABASE")
+            }
+        })
+
+    });
+   
+</script> 

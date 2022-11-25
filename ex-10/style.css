@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    text-align: center;
+}
+input{
+    padding: 5px;
+    border-radius: 3px;
+}
+button{
+    padding: 5px;
+    margin:3px;
+}

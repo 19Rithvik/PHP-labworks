@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Bookstore>
+    <Book ISBN="ISBN-0-13-713526-2" Price="85" Edition="3rd">
+        <Title>A First Course in Database Systems</Title>
+        <Authors>
+            <First_Name>Jeffrey Ullman,Jennifer Widom</First_Name>
+        </Authors>
+    </Book>
+    <Book ISBN="ISBN-0-13-815504-6" Price="10" Edition="4th">
+        <Title>Database Systems: The Complete Book</Title>
+            <Authors>
+                <First_Name>Hector Garcia-Molina,Jeffrey Ullman,Jennifer Widom</First_Name>
+            </Authors>
+    </Book>
+</Bookstore>

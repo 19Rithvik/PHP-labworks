@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="jquery-3.6.0.min.js"></script> -->
+</head>
+<body>
+    <div class="container">
+            <form id="loginForm">    
+                   <input type="text" id="username" name="username" placeholder="Enter Name">
+                   <br>
+                   <br>
+                   <input type="password" id="password" name="password" placeholder="Enter Password">
+                   <br>
+                   <br>
+                   <button id="btn">LOGIN</button>
+                   <!-- <input id="btn" type="submit" value="SUBMIT"  /> -->
+            </form>
+    </div>
+     
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    var form=$("#loginForm").on('submit',(e)=>{
+        e.preventDefault();
+        // CODES 
+        var name=$('#username').val();
+        var pass=$('#password').val();
+        $.ajax({
+           method:'GET',
+           url:'login.php',
+           success:function(data)
+           {
+                var result=$.parseJSON(data);
+                console.log(result);
+                let found=false;
+                result.map(single=>{
+                    if(single.username==name)
+                    {
+                        if(single.password==pass)
+                        {
+                            alert('User Found');
+                            found=true;
+                        }
+                   
+                    }
+                   
+                })
+                if(found==true)
+                {
+                    alert('User found');
+                }
+                else
+                {
+                    alert('User not found');
+                }
+           },
+           error:function(e)
+           {
+               console.log('Error in fetching');
+           }
+        })
+
+    });
+   
+</script> 

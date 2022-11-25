@@ -1,0 +1,27 @@
+.container {
+  text-align: center;
+}
+.btn1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#form {
+  padding-top: 300px;
+}
+input {
+  padding: 5px;
+  border-radius: 3px;
+}
+button {
+  margin: 5px;
+  color: white;
+  background-color: black;
+  padding: 5px;
+  border-radius: 4px;
+}

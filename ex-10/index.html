@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+       <div class="container">
+             <form action="">
+                 <input type="text" id="item" name="item" placeholder="Enter Item">
+                 <br>
+                 <br>
+                 <input type="text" id="updatedItem" placeholder="Enter New Item name"/>
+                 <div class="btn-grp">
+                     <button id="create" name="create">CREATE</button>
+                     <button id="read">READ</button>
+                     <button id="delete">DELETE</button>
+                     <button id="update">UPDATE</button>
+                 </div>
+             </form>
+             <div class="itemDisplay">    
+             </div>
+       </div>
+ <script>
+
+        //  CREATE 
+         $('#updatedItem').hide();
+         $('#create').on('click',function(e)
+         {
+            $('#updatedItem').hide();
+             e.preventDefault();
+            //  console.log('create clicked'); 
+            var item=$('#item').val();
+            $.ajax({
+                 method:'POST',
+                 url:'create.php',
+                 data:{
+                     itemname:item
+                 },
+                 success:function(e)
+                 {
+                     alert("ITEM ADDED");
+                     console.log('item added in th database');
+                 },
+                 error:function(e)
+                 {
+                     alert('ITEM NOT ADDED')
+                 }
+            })
+         })
+
+         //READ
+         $('#read').on('click',function(e)
+         {
+            $('#updatedItem').hide();
+             e.preventDefault();
+             $.ajax({
+                     method:'GET',
+                     url:'read.php',
+                     success:function(data)
+                     {
+                        var result=$.parseJSON(data);
+                        // console.log(result);
+                        $('.itemDisplay').empty();
+                        result.map(single=>{
+                            $('.itemDisplay').append(`<p>${single.item}</p>`)
+                        })
+                     }
+                 }
+             )
+         })
+         //DELETE
+         $('#delete').on('click',function(e)
+         {
+             e.preventDefault();
+             $.ajax({
+                 method:'POST',
+                 url:'delete.php',
+                 data:{
+                     itemname:$('#item').val(),
+                 },
+                 success:function(e)
+                 {
+                     alert('Item deleted');
+                 },
+                 error:function(e)
+                 {
+                     console.log('Item noT removed')
+                 }
+             })
+         })
+         //UPDATE
+
+         $('#update').on('click',function(e)
+         {
+             $('#updatedItem').hide();
+             e.preventDefault();
+             $('#updatedItem').show();
+             let newItem=$('#updatedItem').val();
+             if(newItem!="")
+             {
+             $.ajax({
+                 method:'POST',
+                 url:'update.php',
+                 data:{
+                     itemname:$('#item').val(),
+                     new:newItem
+                 },
+                 success:function(e)
+                 {
+                     alert('Updated');
+                 }
+             })
+            }
+         })
+ </script>
+</body>
+</html>

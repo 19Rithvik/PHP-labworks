@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOKIE</title>
+</head>
+<body>
+    <style>
+       body{
+        margin: 40px
+       }
+        img {
+            width:  200px;
+            height: 200px;
+            object-fit:contain;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+
+        }
+        #submit{
+            display: block;
+        }
+    </style>
+    <h1>Shopping Cart</h1>
+    <form action="cart.php" method="POST">
+    <div class="container">
+        <div class="product1">
+            <h2>Lamborghini</h2>
+            <div class="image">
+                <img src="https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/few_off/sian-fkp-37/2022/06_20/gallery/sian_05_m.jpg" alt="">
+            </div>
+            <p>Price: <span>&#8377;</span>2.4C </p>
+            <input type="radio" value="lamborghini" name="product" required >Add
+        </div>  
+        <div class="product2">
+            <h2>Rolls Royce</h2>
+            <img src="https://cdn.motor1.com/images/mgl/13jgw/s1/rolls-royce-black-badge-wraith-by-spofec.jpg" alt="">
+            <p>Price: <span>&#8377;</span>3C</p>
+            <input type="radio" value="rolls_royce" name="product" required>Add
+
+        </div>
+        <div class="product3">
+            <h2>Benz</h2>
+            <img src="https://cdn.bmwblog.com/wp-content/uploads/2015/07/2016-bmw-x1-images-1900x1200-18.jpg" alt="">
+            <p>Price: <span>&#8377;</span>2.7C </p>
+            <input type="radio" value="benz" name="product" required>Add
+
+        </div>
+        <div class="product4">
+            <h2>Dugatti</h2>
+            <img src="https://i.ytimg.com/vi/23idtsmFGFg/maxresdefault.jpg" alt="">
+            <p>Price: <span>&#8377;</span>4C </p>
+            <input type="radio" value="dugatti" name="product" required>Add
+
+        </div>
+        <div class="product5">
+            <h2>Porche</h2>
+            <img src="https://www.cnet.com/a/img/resize/0fc5b93100c6e7b496c1abdceee3191888ba9173/hub/2022/07/01/2db8161e-5063-401d-8582-3d26786543a8/2022-porsche-911-carrera-gts-001.jpg?auto=webp&width=1200" alt="">
+            <p>Price: <span>&#8377;</span>2.9C </p>
+            <input type="radio" value="porche" name="product" required>Add
+
+        </div>
+    </div>
+    <br>
+    <br>
+        <input type="submit" id="submit" name="submit" value="Add to cart">
+    </form>
+</body>
+</html>

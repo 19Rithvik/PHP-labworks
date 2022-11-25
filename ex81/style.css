@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    text-align: center;
+}
+#btn{
+    padding:5px;
+    border-radius: 4px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
